@@ -1,26 +1,108 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ---------------------------------------------------------------------------
+   Quell Systems — tokens
+   Fuente de verdad: design-system/quell-systems/MASTER.md
+   Tres colores de marca. Sin gradientes de marca, sin cuarto color de acento.
+--------------------------------------------------------------------------- */
+
+@theme {
+  /* Marca */
+  --color-navy: #12263f;
+  --color-slate: #7c8fa8;
+  --color-paper: #f7f8f9;
+
+  /* Escala derivada del navy (mismo hue, luminancia escalonada) */
+  --color-navy-900: #0b1826;
+  --color-navy-800: #12263f;
+  --color-navy-700: #1b3556;
+  --color-navy-600: #24466e;
+
+  /* Escala derivada del slate */
+  --color-slate-700: #5a6b80; /* texto secundario sobre claro — 7.0:1 */
+  --color-slate-500: #7c8fa8; /* marca */
+  --color-slate-300: #b3c0cf;
+  --color-slate-200: #dde3ea; /* bordes */
+  --color-slate-100: #edf0f3; /* superficies muted */
+
+  /* Semánticos */
+  --color-background: #f7f8f9;
+  --color-surface: #ffffff;
+  --color-foreground: #12263f;
+  --color-muted-foreground: #5a6b80;
+  --color-border: #dde3ea;
+  --color-ring: #7c8fa8;
+
+  /* Tipografía */
+  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, monospace;
+
+  /* Radios — ratio ~0.31 tomado del logotipo (rx 26 / 84) */
+  --radius-brand: 14px;
+  --radius-brand-lg: 18px;
+  --radius-brand-xl: 26px;
+
+  /* Easing: una sola curva para toda la página */
+  --ease-quell: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    /* Lenis maneja el scroll; sin esto el scroll nativo pelea con el suyo */
+    scroll-behavior: auto;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "ss01", "ss02";
+  }
+
+  /* Un solo estilo de foco en todo el sitio, siempre visible */
+  :focus-visible {
+    outline: 2px solid var(--color-navy);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background-color: var(--color-navy);
+    color: var(--color-paper);
+  }
+
+  /* Tabular figures en todo lo numérico para que no bailen al animar */
+  .tabular {
+    font-variant-numeric: tabular-nums;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Kicker mono numerado — la firma editorial de la hoja de identidad */
+  .kicker {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    line-height: 1;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-muted-foreground);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Accesibilidad: toda la coreografía se apaga de golpe.
+   Los componentes además leen useReducedMotion() para no montar los efectos
+   de scroll caros, esto es el cinturón de seguridad para lo que quede en CSS.
+--------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
