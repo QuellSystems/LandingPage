@@ -5,9 +5,9 @@ import { Reveal, RevealGroup, RevealItem } from "@/components/ui/reveal";
 import { QuellMark } from "@/components/brand/quell-mark";
 
 const STATS = [
-  { value: 23, suffix: "", label: "Sistemas en producción", note: "desde 2019" },
+  { value: 3, suffix: "", label: "Sistemas en producción", note: "desde 2025" },
   { value: 340, suffix: "", label: "Suscripciones activas", note: "supply · clinic · coach" },
-  { value: 96, suffix: "%", label: "Renovación de abono", note: "últimos 3 años" },
+  { value: 96, suffix: "%", label: "Renovación de abono", note: "desde el inicio" },
   { value: 4, suffix: " h", label: "Respuesta a incidente crítico", note: "SLA contractual" },
 ];
 
