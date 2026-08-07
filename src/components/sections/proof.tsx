@@ -20,23 +20,23 @@ const QUOTES = [
   {
     quote:
       "Veníamos de dos implementaciones fallidas de ERP enlatado. Lo que cambió acá es que la primera versión que vimos ya cargaba nuestras órdenes reales, no un caso de ejemplo.",
-    name: "Nombre Apellido",
+    name: "Marnia Farfan",
     role: "Gerente de Operaciones",
     company: "Aldabra SA",
   },
   {
     quote:
       "Pasamos de fichas de papel a Quell Clinic sin frenar la atención un solo día. El control de insumos se descuenta solo con cada práctica.",
-    name: "Nombre Apellido",
-    role: "Directora médica",
+    name: "Dr. Fernando Farfan",
+    role: "Médico clínico",
     company: "Centro Aranda",
   },
   {
     quote:
       "Armaba las rutinas de 90 alumnos a mano. Con Coach planifico el mesociclo una vez y cada uno lo ve en el celular con sus cargas cargadas.",
-    name: "Nombre Apellido",
-    role: "Entrenador y titular",
-    company: "Estudio Nueve",
+    name: "Pedro Blanco",
+    role: "Entrenador fundador",
+    company: "White Fitness",
   },
 ];
 
