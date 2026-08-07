@@ -63,16 +63,16 @@ export function Contact() {
               <div>
                 <p className="kicker mb-2">Email</p>
                 <a
-                  href="mailto:hola@quellsystems.com"
+                  href="mailto:systemsquell@gmail.com"
                   className="-my-3 inline-flex min-h-11 cursor-pointer items-center font-mono text-[13.5px] text-navy underline-offset-4 hover:underline"
                 >
-                  hola@quellsystems.com
+                  systemsquell@gmail.com
                 </a>
               </div>
               <div>
                 <p className="kicker mb-2">Ubicación</p>
                 <p className="font-mono text-[13.5px] text-navy">
-                  Rosario, Santa Fe · Remoto
+                  Salta Capital · Remoto - presencial
                 </p>
               </div>
             </div>
