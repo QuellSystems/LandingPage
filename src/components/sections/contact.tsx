@@ -1,8 +1,10 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { ArrowRight, Check } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
+import { sendContact, type ContactState } from "@/app/actions/contact";
 
 const EXPECTATIONS = [
   "30 minutos por videollamada, sin presentación institucional",
@@ -21,13 +23,11 @@ const SERVICIOS = [
 ];
 
 export function Contact() {
-  const [sent, setSent] = useState(false);
-
-  // Sin backend todavía: dejar cableado a tu CRM / endpoint antes de publicar.
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setSent(true);
-  };
+  const [state, formAction] = useActionState<ContactState, FormData>(
+    sendContact,
+    { status: "idle" }
+  );
+  const sent = state.status === "success";
 
   return (
     <section id="contacto" className="border-t border-border py-28 sm:py-36">
@@ -94,7 +94,7 @@ export function Contact() {
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form action={formAction} className="space-y-5">
                   <Field
                     id="nombre"
                     label="Nombre y apellido"
@@ -158,16 +158,11 @@ export function Contact() {
                     </p>
                   </div>
 
-                  <button
-                    type="submit"
-                    className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-[14px] bg-accent px-6 py-3.5 text-[15px] font-medium text-paper transition-[background-color,transform] duration-200 hover:-translate-y-px hover:bg-accent-dark"
-                  >
-                    Enviar y agendar
-                    <ArrowRight
-                      className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5"
-                      strokeWidth={1.8}
-                    />
-                  </button>
+                  {state.status === "error" && (
+                    <p className="text-[13px] text-red-600">{state.message}</p>
+                  )}
+
+                  <SubmitButton />
                 </form>
               )}
             </div>
@@ -209,3 +204,25 @@ function Field({
     </div>
   );
 }
+
+function SubmitButton() {
+
+  const { pending } = useFormStatus();
+
+  return (
+    <button
+      type="submit"
+      disabled={pending}
+      className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-[14px] bg-accent px-6 py-3.5 text-[15px] font-medium text-paper transition-[background-color,transform] duration-200 hover:-translate-y-px hover:bg-accent-dark disabled:cursor-not-allowed disabled:opacity-60"
+    >
+      {pending ? "Enviando…" : "Enviar y agendar"}
+      {!pending && (
+        <ArrowRight
+          className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5"
+          strokeWidth={1.8}
+        />
+      )}
+    </button>
+  );
+}
+
