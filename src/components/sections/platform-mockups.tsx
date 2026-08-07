@@ -91,7 +91,7 @@ export function MockupShell({
 
 function KpiRow({ items }: { items: { label: string; value: string; delta: string }[] }) {
   return (
-    <div className="mb-6 grid grid-cols-3 gap-2.5">
+    <div className="mb-6 grid grid-cols-3 gap-2 sm:gap-2.5">
       {items.map((kpi) => (
         <div
           key={kpi.label}

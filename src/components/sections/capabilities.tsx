@@ -25,7 +25,7 @@ export function Capabilities() {
       <div className="mx-auto max-w-[1200px] px-5 sm:px-8">
         <Reveal>
           <p className="kicker mb-8 flex items-center gap-3">
-            <span className="h-px w-8 bg-slate-300" />
+            <span className="h-px w-8 shrink-0 bg-slate-300" />
             04 / Cómo trabajamos
           </p>
           <h2 className="max-w-[24ch] text-[clamp(1.9rem,4.2vw,2.9rem)] font-medium leading-[1.12] tracking-[-0.03em] text-navy">

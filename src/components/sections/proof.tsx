@@ -51,12 +51,12 @@ export function Proof() {
       <div className="relative mx-auto max-w-[1200px] px-5 sm:px-8">
         <Reveal>
           <p className="kicker mb-8 flex items-center gap-3 text-slate-300">
-            <span className="h-px w-8 bg-white/25" />
+            <span className="h-px w-8 shrink-0 bg-white/25" />
             06 / Resultados
           </p>
         </Reveal>
 
-        <RevealGroup className="grid grid-cols-2 gap-x-8 gap-y-12 border-b border-white/12 pb-16 lg:grid-cols-4">
+        <RevealGroup className="grid grid-cols-2 gap-x-8 gap-y-12 border-b border-white/12 pb-16 sm:grid-cols-4">
           {STATS.map((stat) => (
             <RevealItem key={stat.label}>
               <p className="tabular text-[clamp(2.4rem,5vw,3.6rem)] font-medium leading-none tracking-[-0.04em] text-paper">

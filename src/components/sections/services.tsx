@@ -70,7 +70,7 @@ export function Services() {
       <div className="mx-auto max-w-[1200px] px-5 sm:px-8">
         <Reveal>
           <p className="kicker mb-8 flex items-center gap-3">
-            <span className="h-px w-8 bg-slate-300" />
+            <span className="h-px w-8 shrink-0 bg-slate-300" />
             02 / Servicios
           </p>
           <h2 className="max-w-[22ch] text-[clamp(1.9rem,4.2vw,2.9rem)] font-medium leading-[1.12] tracking-[-0.03em] text-navy">
@@ -195,7 +195,7 @@ export function Services() {
                 </span>
               </div>
 
-              <div className="mt-9 grid gap-px overflow-hidden rounded-[14px] border border-border bg-border lg:grid-cols-3">
+              <div className="mt-9 grid gap-px overflow-hidden rounded-[14px] border border-border bg-border md:grid-cols-3">
                 {SUBSCRIPTION_PRODUCTS.map((product) => (
                   <div key={product.suffix} className="bg-surface p-6 sm:p-7">
                     <div className="flex items-center gap-3">

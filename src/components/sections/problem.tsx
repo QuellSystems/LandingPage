@@ -33,7 +33,7 @@ export function Problem() {
       <div className="mx-auto max-w-[1200px] px-5 sm:px-8">
         <Reveal>
           <p className="kicker mb-8 flex items-center gap-3">
-            <span className="h-px w-8 bg-slate-300" />
+            <span className="h-px w-8 shrink-0 bg-slate-300" />
             01 / Diagnóstico
           </p>
         </Reveal>

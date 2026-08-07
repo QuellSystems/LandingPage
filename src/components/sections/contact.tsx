@@ -35,7 +35,7 @@ export function Contact() {
         <div className="grid gap-14 lg:grid-cols-[1fr_460px] lg:gap-20">
           <Reveal>
             <p className="kicker mb-8 flex items-center gap-3">
-              <span className="h-px w-8 bg-accent/60" />
+              <span className="h-px w-8 shrink-0 bg-accent/60" />
               07 / Contacto
             </p>
             <h2 className="max-w-[16ch] text-[clamp(2rem,4.6vw,3.2rem)] font-medium leading-[1.08] tracking-[-0.035em] text-navy">

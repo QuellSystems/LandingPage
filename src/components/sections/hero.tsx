@@ -68,7 +68,7 @@ export function Hero() {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="kicker mb-7 flex items-center gap-3"
         >
-          <span className="h-px w-8 bg-accent/60" />
+          <span className="h-px w-8 shrink-0 bg-accent/60" />
           Software a medida · Productos por suscripción · Web
         </motion.p>
 
@@ -142,7 +142,7 @@ export function Hero() {
           initial={reduced ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.55 }}
-          className="mt-16 grid max-w-[640px] grid-cols-2 gap-x-8 gap-y-6 border-t border-border pt-7 sm:grid-cols-3"
+          className="mt-16 grid max-w-[640px] grid-cols-1 gap-x-8 gap-y-6 border-t border-border pt-7 sm:grid-cols-3"
         >
           {FACTS.map((fact) => (
             <div key={fact.label}>
