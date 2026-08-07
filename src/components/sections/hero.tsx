@@ -7,8 +7,8 @@ import { TextRotate } from "@/components/ui/text-rotate";
 import { QuellMark } from "@/components/brand/quell-mark";
 
 const FACTS = [
-  { label: "Fundada", value: "2019" },
-  { label: "Sistemas en producción", value: "23" },
+  { label: "Fundada", value: "2025" },
+  { label: "Sistemas en producción", value: "3" },
   { label: "Rubros", value: "Industria · Salud · Fitness · Retail" },
 ];
 
