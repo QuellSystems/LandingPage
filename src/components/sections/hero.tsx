@@ -68,7 +68,7 @@ export function Hero() {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="kicker mb-7 flex items-center gap-3"
         >
-          <span className="h-px w-8 bg-slate-300" />
+          <span className="h-px w-8 bg-accent/60" />
           Software a medida · Productos por suscripción · Web
         </motion.p>
 
@@ -121,7 +121,7 @@ export function Hero() {
         >
           <a
             href="#contacto"
-            className="group inline-flex cursor-pointer items-center justify-center gap-2 rounded-[14px] bg-navy px-6 py-3.5 text-[15px] font-medium text-paper transition-[background-color,transform] duration-200 hover:-translate-y-px hover:bg-navy-700"
+            className="group inline-flex cursor-pointer items-center justify-center gap-2 rounded-[14px] bg-accent px-6 py-3.5 text-[15px] font-medium text-paper transition-[background-color,transform] duration-200 hover:-translate-y-px hover:bg-accent-dark"
           >
             Agendar diagnóstico de 30 min
             <ArrowRight

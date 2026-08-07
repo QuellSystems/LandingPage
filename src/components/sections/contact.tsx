@@ -35,7 +35,7 @@ export function Contact() {
         <div className="grid gap-14 lg:grid-cols-[1fr_460px] lg:gap-20">
           <Reveal>
             <p className="kicker mb-8 flex items-center gap-3">
-              <span className="h-px w-8 bg-slate-300" />
+              <span className="h-px w-8 bg-accent/60" />
               07 / Contacto
             </p>
             <h2 className="max-w-[16ch] text-[clamp(2rem,4.6vw,3.2rem)] font-medium leading-[1.08] tracking-[-0.035em] text-navy">
@@ -51,7 +51,7 @@ export function Contact() {
               {EXPECTATIONS.map((item) => (
                 <li key={item} className="flex gap-3 text-[15px] text-navy">
                   <Check
-                    className="mt-0.5 h-4 w-4 shrink-0 text-slate-500"
+                    className="mt-0.5 h-4 w-4 shrink-0 text-accent"
                     strokeWidth={1.8}
                   />
                   {item}
@@ -82,7 +82,7 @@ export function Contact() {
             <div className="rounded-[22px] border border-border bg-surface p-7 sm:p-8">
               {sent ? (
                 <div className="flex min-h-[380px] flex-col items-start justify-center">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-[14px] bg-navy text-paper">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-[14px] bg-accent text-paper">
                     <Check className="h-5 w-5" strokeWidth={2} />
                   </span>
                   <p className="mt-6 text-[19px] font-medium tracking-tight text-navy">
@@ -160,7 +160,7 @@ export function Contact() {
 
                   <button
                     type="submit"
-                    className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-[14px] bg-navy px-6 py-3.5 text-[15px] font-medium text-paper transition-[background-color,transform] duration-200 hover:-translate-y-px hover:bg-navy-700"
+                    className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-[14px] bg-accent px-6 py-3.5 text-[15px] font-medium text-paper transition-[background-color,transform] duration-200 hover:-translate-y-px hover:bg-accent-dark"
                   >
                     Enviar y agendar
                     <ArrowRight

@@ -74,7 +74,7 @@ export function Process() {
           <motion.div
             aria-hidden="true"
             style={{ scaleY: reduced ? 1 : scaleY }}
-            className="absolute bottom-0 left-[3px] top-2 w-px origin-top bg-navy sm:left-[calc(11rem+3px)]"
+            className="absolute bottom-0 left-[3px] top-2 w-px origin-top bg-accent sm:left-[calc(11rem+3px)]"
           />
 
           <ol>
@@ -89,7 +89,7 @@ export function Process() {
                     {/* Nodo sobre el riel */}
                     <span
                       aria-hidden="true"
-                      className="absolute left-[-1.75rem] top-1 h-[7px] w-[7px] rounded-full bg-navy ring-4 ring-background sm:left-[11rem]"
+                      className="absolute left-[-1.75rem] top-1 h-[7px] w-[7px] rounded-full bg-accent ring-4 ring-background sm:left-[11rem]"
                     />
 
                     <div className="mt-3 sm:mt-0 sm:pl-10">

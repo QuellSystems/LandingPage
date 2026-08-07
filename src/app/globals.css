@@ -12,6 +12,10 @@
   --color-slate: #7c8fa8;
   --color-paper: #f7f8f9;
 
+  /* Acento — terracota/óxido, contraste medio, no genérico */
+  --color-accent: #C4622D;
+  --color-accent-dark: #A8511F;
+
   /* Escala derivada del navy (mismo hue, luminancia escalonada) */
   --color-navy-900: #0b1826;
   --color-navy-800: #12263f;

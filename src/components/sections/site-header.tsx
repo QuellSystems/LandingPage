@@ -50,7 +50,7 @@ export function SiteHeader() {
                 className="group relative inline-flex min-h-11 cursor-pointer items-center text-[14px] text-muted-foreground transition-colors duration-200 hover:text-navy"
               >
                 {link.label}
-                <span className="absolute inset-x-0 bottom-[13px] h-px origin-left scale-x-0 bg-navy transition-transform duration-200 group-hover:scale-x-100" />
+                <span className="absolute inset-x-0 bottom-[13px] h-px origin-left scale-x-0 bg-accent transition-transform duration-200 group-hover:scale-x-100" />
               </a>
             ))}
           </nav>
@@ -58,7 +58,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-3">
             <a
               href="#contacto"
-              className="hidden min-h-11 cursor-pointer items-center rounded-[14px] bg-navy px-5 text-[14px] font-medium text-paper transition-[background-color,transform] duration-200 hover:-translate-y-px hover:bg-navy-700 sm:inline-flex"
+              className="hidden min-h-11 cursor-pointer items-center rounded-[14px] bg-accent px-5 text-[14px] font-medium text-paper transition-[background-color,transform] duration-200 hover:-translate-y-px hover:bg-accent-dark sm:inline-flex"
             >
               Agendar diagnóstico
             </a>
@@ -101,7 +101,7 @@ export function SiteHeader() {
                 <a
                   href="#contacto"
                   onClick={() => setOpen(false)}
-                  className="mt-3 mb-1 block cursor-pointer rounded-[14px] bg-navy px-5 py-3 text-center text-[15px] font-medium text-paper"
+                  className="mt-3 mb-1 block cursor-pointer rounded-[14px] bg-accent px-5 py-3 text-center text-[15px] font-medium text-paper"
                 >
                   Agendar diagnóstico
                 </a>
