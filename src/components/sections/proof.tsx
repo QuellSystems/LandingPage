@@ -22,14 +22,14 @@ const QUOTES = [
       "Veníamos de dos implementaciones fallidas de ERP enlatado. Lo que cambió acá es que la primera versión que vimos ya cargaba nuestras órdenes reales, no un caso de ejemplo.",
     name: "Marnia Farfan",
     role: "Gerente de Operaciones",
-    company: "Aldabra SA",
+    company: "",
   },
   {
     quote:
       "Pasamos de fichas de papel a Quell Clinic sin frenar la atención un solo día. El control de insumos se descuenta solo con cada práctica.",
     name: "Dr. Fernando Farfan",
     role: "Médico clínico",
-    company: "Centro Aranda",
+    company: "",
   },
   {
     quote:
@@ -74,7 +74,7 @@ export function Proof() {
 
         <RevealGroup className="mt-16 grid gap-10 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
           {QUOTES.map((item) => (
-            <RevealItem key={item.company}>
+            <RevealItem key={item.name}>
               <figure>
                 <blockquote className="text-[18px] leading-[1.55] tracking-[-0.01em] text-paper sm:text-[19px]">
                   <span className="text-slate-500">“</span>
@@ -82,14 +82,15 @@ export function Proof() {
                   <span className="text-slate-500">”</span>
                 </blockquote>
                 <figcaption className="mt-7 flex items-center gap-3.5 border-t border-white/12 pt-5">
-                  {/* Iniciales en mono en vez de avatar stock */}
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[11px] border border-white/15 font-mono text-[11px] text-slate-100">
-                    {item.company.slice(0, 2).toUpperCase()}
-                  </span>
+                  {item.company && (
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[11px] border border-white/15 font-mono text-[11px] text-slate-100">
+                      {item.company.slice(0, 2).toUpperCase()}
+                    </span>
+                  )}
                   <span className="text-[13.5px] leading-tight">
                     <span className="block text-paper">{item.name}</span>
                     <span className="block text-slate-500">
-                      {item.role} · {item.company}
+                      {item.role}{item.company ? ` · ${item.company}` : ""}
                     </span>
                   </span>
                 </figcaption>
